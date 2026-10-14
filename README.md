@@ -57,3 +57,18 @@ svenska i `i18n/sv.po` och i webbplatsinnehållet.
 Modulerna deployas till `/usr/share/odoo-website/` på respektive minion och
 aktiveras med `-u <modul>` efter version bump. Se respektive HANDOVER för
 miljö, arbetsväg och kommandon.
+
+`customers/deploy.sh` gör hela kedjan: paketerar, överför till containern,
+uppdaterar modulen, startar om Odoo och verifierar alla sidor.
+
+## OpenDesign
+
+`odoo-website`-pluginen (`~/open-design/.od/plugins/odoo-website/`) pekar på
+detta repo:
+
+```json
+"plugin": { "repo": "https://github.com/vertelab/odoo-design" }
+```
+
+Pluginen genererar Odoo-kompatibel HTML via XML-RPC. Se `HANDOVER-luke.md`
+för uppsättning på arbetsstationen.
