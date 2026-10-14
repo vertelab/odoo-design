@@ -6,7 +6,7 @@ Migrering av kundens WordPress-sajt `businessmassan.se` till Odoo-webbplatsen
 **Kund:** Anders Björck AB (arrangör av Businessmässan).
 **Kontakt:** Anders Björck · info@businessmassan.se · 013-10 09 10.
 **Källa:** businessmassan.se (WordPress + Elementor Pro).
-**Status:** FAS 1 klar 2026-10-13.
+**Status:** FAS 1 + FAS 2 klara 2026-10-13.
 
 ## Innehåll
 
@@ -69,8 +69,14 @@ systemctl restart odoo
 2. **WP-texten är sanningen.** Odoo-versionen är en omskrivning, inte en kopia.
 3. **Allt ska tillbaka in i `data/*.xml`** så det överlever uppgradering.
 
+## Klart
+
+- **FAS 1** — städning: demodata borta, `res.company`, meny, footer, `ir.asset`
+- **FAS 2** — innehåll: alla 10 sidor byggda från WP-texten **ordagrant**
+- **FAS 3** — design: kundens palett extraherad från businessmassan.se
+- **FAS 4** — modulen versionshanterad här (källan var tidigare okänd)
+
 ## Kvar
 
-- **FAS 2** — innehåll: 4 511 WP-ord att bygga om som Odoo-snippets
-- **FAS 3** — design (kundens egen)
-- **FAS 4** — denna modul är nu versionshanterad här (tidigare okänd källa)
+- Bilderna: 17 av 71 media används i modulen; resten ligger i `_source/bm-wp/media/`
+- `website.custom_code_head` sätts via shell — bör flyttas till `data/website_config.xml`

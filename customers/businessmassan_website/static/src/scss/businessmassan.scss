@@ -1,12 +1,32 @@
-// Businessmässan — typsnitt enligt originalet (businessmassan.se)
-// Rubriker: Noto Sans · Brödtext: Lato
+// Businessmässan — designspråk extraherat från businessmassan.se (2026-10-13)
+// ---------------------------------------------------------------------------
+// Färger och typsnitt är kundens egna (WordPress + Elementor Pro,
+// tema hello-elementor). Vertels palett används INTE här.
+//
+//   Bakgrund      #12100b   (mörk bas — dominerande)
+//   Sekundär      #262528   (kort, sektioner)
+//   Accent 1      #e64500   (orange — primär accent)
+//   Accent 2      #e60077   (rosa/magenta)
+//   Ljus          #f9f9f9   (text på mörk botten)
+//   Typsnitt      Noto Sans (rubriker) · Lato (brödtext)
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400&display=swap');
 
 :root {
+    --bm-bg:        #12100b;
+    --bm-surface:   #262528;
+    --bm-surface-2: #272629;
+    --bm-accent:    #e64500;
+    --bm-accent-2:  #e60077;
+    --bm-light:     #f9f9f9;
+    --bm-muted:     #b3b3b3;
+    --bm-border:    #3b3935;
+
     --bm-font-heading: 'Noto Sans', sans-serif;
-    --bm-font-body: 'Lato', sans-serif;
+    --bm-font-body:    'Lato', sans-serif;
 }
 
+// ── Typografi ──────────────────────────────────────────────────────────────
 body, .o_website_font_body {
     font-family: var(--bm-font-body);
 }
@@ -16,14 +36,204 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 600;
 }
 
-// Mörk header som originalet (#272629)
-#wrapwrap > header, .o_header_standard {
-    background-color: #272629;
+h1, .h1 { font-weight: 800; letter-spacing: -0.02em; }
+
+// ── Header ─────────────────────────────────────────────────────────────────
+// Mörk header som originalet.
+#wrapwrap > header,
+.o_header_standard,
+#o_main_nav {
+    background-color: var(--bm-surface-2);
 }
 
-// Dölj e-handelsvagnen — sajten är en mässwebbplats, ingen butik.
-// (Vyn website_sale.header_cart_link är en primary-vy som layouten anropar;
-//  den får därför inte inaktiveras, bara döljas.)
+#wrapwrap > header {
+    border-bottom: 1px solid var(--bm-border);
+}
+
+.navbar .nav-link {
+    color: var(--bm-light);
+    font-family: var(--bm-font-heading);
+    font-weight: 500;
+
+    &:hover, &:focus, &.active {
+        color: var(--bm-accent);
+    }
+}
+
+// ── Länkar och knappar ─────────────────────────────────────────────────────
+a { color: var(--bm-accent-2); }
+a:hover { color: var(--bm-accent); }
+
+.btn-primary, .btn.btn-primary {
+    background-color: var(--bm-accent);
+    border-color: var(--bm-accent);
+    font-family: var(--bm-font-heading);
+    font-weight: 600;
+
+    &:hover, &:focus {
+        background-color: var(--bm-accent-2);
+        border-color: var(--bm-accent-2);
+    }
+}
+
+.btn-secondary, .btn.btn-secondary {
+    background-color: transparent;
+    border-color: var(--bm-accent);
+    color: var(--bm-accent);
+
+    &:hover {
+        background-color: var(--bm-accent);
+        color: var(--bm-light);
+    }
+}
+
+// ── Sektioner ──────────────────────────────────────────────────────────────
+// Mörk bas som originalet.
+.o_colored_level,
+section.s_text_block,
+section.s_title {
+    background-color: var(--bm-bg);
+    color: var(--bm-light);
+}
+
+// Ljus sektion för kontrast (t.ex. "Varför ställa ut?")
+.bm-section-light {
+    background-color: var(--bm-light);
+    color: var(--bm-bg);
+}
+
+// ── Kort ───────────────────────────────────────────────────────────────────
+.bm-card,
+.card {
+    background-color: var(--bm-surface);
+    border: 1px solid var(--bm-border);
+    border-radius: 8px;
+    color: var(--bm-light);
+
+    h3, h4, h5 { color: var(--bm-accent); }
+}
+
+// ── Tabeller (regelverk på /for-utstallare) ────────────────────────────────
+table {
+    color: var(--bm-light);
+
+    th {
+        background-color: var(--bm-surface);
+        color: var(--bm-accent);
+        font-family: var(--bm-font-heading);
+        border-color: var(--bm-border);
+    }
+
+    td {
+        border-color: var(--bm-border);
+    }
+}
+
+// ── Footer ─────────────────────────────────────────────────────────────────
+#footer {
+    background-color: var(--bm-surface-2);
+    color: var(--bm-light);
+
+    h5 { color: var(--bm-accent); }
+    a { color: var(--bm-light); &:hover { color: var(--bm-accent); } }
+}
+
+// ── Dölj e-handelsvagnen ───────────────────────────────────────────────────
+// Vyn website_sale.header_cart_link är en primary-vy som layouten anropar;
+// den får därför inte inaktiveras, bara döljas.
 .o_wsale_my_cart {
     display: none !important;
+}
+
+// ── Innehållstypografi (WP-texten ordagrant) ───────────────────────────────
+// Odoo sätter bakgrund via CSS-variabler --o-cc*-bg på .o_cc1–.o_cc5.
+// Vi sätter dem direkt i stället för att kämpa mot klasserna.
+:root, .o_cc1, .o_cc2, .o_cc3, .o_cc4, .o_cc5, .o_cc {
+    --o-cc-bg:         var(--bm-bg);
+    --o-cc1-bg:        var(--bm-bg);
+    --o-cc2-bg:        var(--bm-surface);
+    --o-cc3-bg:        var(--bm-bg);
+    --o-cc4-bg:        var(--bm-surface-2);
+    --o-cc5-bg:        var(--bm-bg);
+    --o-cc1-text:      var(--bm-light);
+    --o-cc2-text:      var(--bm-light);
+    --o-cc3-text:      var(--bm-light);
+    --o-cc4-text:      var(--bm-light);
+    --o-cc5-text:      var(--bm-light);
+    --o-cc1-headings:  var(--bm-light);
+    --o-cc2-headings:  var(--bm-light);
+    --o-cc3-headings:  var(--bm-light);
+    --o-cc4-headings:  var(--bm-light);
+    --o-cc5-headings:  var(--bm-light);
+    --o-cc1-link:      var(--bm-accent-2);
+    --o-cc2-link:      var(--bm-accent-2);
+    --o-cc3-link:      var(--bm-accent);
+    --o-cc4-link:      var(--bm-accent-2);
+    --o-cc5-link:      var(--bm-accent);
+    --o-cc1-btn-primary:       var(--bm-accent);
+    --o-cc1-btn-primary-border:var(--bm-accent);
+    --o-cc1-btn-primary-text:  var(--bm-light);
+}
+
+// Fallback med !important på de faktiska klasserna
+.o_colored_level, .o_cc, #wrapwrap, #wrap, .bm-page {
+    background-color: var(--bm-bg) !important;
+    color: var(--bm-light);
+}
+
+// Sektioner som ska vara ljusa
+.bm-section-light,
+.bm-section-light.o_colored_level,
+.bm-section-light.o_cc {
+    background-color: var(--bm-light) !important;
+    color: var(--bm-bg) !important;
+}
+
+.bm-page {
+    background-color: var(--bm-bg);
+    color: var(--bm-light);
+}
+
+// Hela sidan mörk — även utanför .bm-page
+body, #wrapwrap {
+    background-color: var(--bm-bg);
+}
+
+.bm-h1 { color: var(--bm-light); font-size: 2.6rem; line-height: 1.15; }
+.bm-h2 { color: var(--bm-accent); font-size: 2rem; }
+.bm-h3 { color: var(--bm-accent); font-size: 1.5rem; }
+.bm-h4 { color: var(--bm-light); font-size: 1.15rem; font-weight: 600; }
+
+.bm-page p { color: var(--bm-light); font-size: 1.02rem; line-height: 1.7; }
+.bm-page li { color: var(--bm-light); line-height: 1.7; }
+
+.bm-link {
+    color: var(--bm-accent-2);
+    font-weight: 600;
+    text-decoration: none;
+    &:hover { color: var(--bm-accent); text-decoration: underline; }
+}
+
+.bm-img {
+    border-radius: 8px;
+    max-height: 420px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.bm-logo {
+    max-height: 70px;
+    width: auto;
+    filter: brightness(0) invert(1);   // vita loggor på mörk botten
+    opacity: .85;
+}
+
+// Ljus sektion för kontrast
+.bm-section-light {
+    background-color: var(--bm-light);
+    color: var(--bm-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    p, li, h3, h4 { color: var(--bm-bg); }
+    .bm-h2, .bm-h3 { color: var(--bm-accent); }
 }

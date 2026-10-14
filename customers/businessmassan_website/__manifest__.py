@@ -1,10 +1,10 @@
 {
     'name': 'Businessmässan Website',
-    'version': '18.0.1.16.0',
-    'summary': 'Kopia av businessmassan.se som Odoo-webbplats.',
+    'version': '18.0.1.23.0',
+    'summary': 'Businessmässan (Anders Björck AB) — Odoo website.',
     'category': 'Website/Website',
     'author': 'Vertel AB',
-    'website': 'https://vertel.se',
+    'website': 'https://vertel.se/apps/odoo-design/businessmassan_website',
     'license': 'AGPL-3',
     'depends': ['website'],
     'data': [

@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Businessmässan: sidorna byggda från businessmassan.se.
+         WP-texten är ORDAGRANN (användarens beslut 2026-10-13). -->
+
+    <record id="view_lkpg" model="ir.ui.view">
+        <field name="name">businessmassan.lkpg</field>
+        <field name="type">qweb</field>
+        <field name="key">businessmassan_website.lkpg</field>
+        <field name="arch" type="xml">
+            <t name="Businessmässan Startsida" t-name="businessmassan_website.lkpg">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure bm-page">
+                        <div class="container py-5">
+<img src="/businessmassan_website/static/src/img/BM-Vit.png" class="img-fluid bm-img my-3" alt=""/>
+<h1 class="bm-h1">Ställ ut på Businessmässan Linköping 2026</h1>
+<h4 class="bm-h4 mt-3">Vill du träffa rätt beslutsfattare och fylla orderboken? Torsdagen den 12 november samlas regionens näringsliv på Konsert &amp; Kongress för den tredje upplagan av Businessmässan Linköping.</h4>
+<p><a href="/tidigare-massor" class="bm-link">Se tidigare mässsor &amp; event</a></p>
+<p><a href="/boka" class="bm-link">Boka din plats här</a></p>
+<p><a href="/for-utstallare" class="bm-link">För utställare</a></p>
+<p>När? 12 nov 2026 Kl. 11.00–13.00 Exklusivt för utställare. Kl 13-17 Öppen B2B-mässa för allmänheten</p>
+<p>VAR? Konsert &amp; Kongress Linköping</p>
+<h3 class="bm-h3 mt-4">Upplägg &amp; Nyheter 2026</h3>
+<img src="/businessmassan_website/static/src/img/AdobeStock_590742789-scaled.jpeg" class="img-fluid bm-img my-3" alt=""/>
+<h4 class="bm-h4 mt-3">Exklusiv B2B-tid (Nyhet!)</h4>
+<p>11.00–13.00 Slutet evenemang för utställare och inbjudna beslutsfattare. Fokus på nätverkande mellan utställare, businesslunch och spännande scenprogram om Framtidsstaden Linköping och hur navigera i en osäker omvärld – Från hotbild till motståndskraft. Detta seminarium ger dig kunskapen, verktygen och modet att planera och agera. Missa inte ett av mässans viktigaste pass för dig som leder eller utvecklar företag!</p>
+<img src="/businessmassan_website/static/src/img/Gemini_Generated_Image_zd8gpkzd8gpkzd8g.png" class="img-fluid bm-img my-3" alt=""/>
+<h4 class="bm-h4 mt-3">Öppen B2B- mässa</h4>
+<p>13.00–17.00 Öppen B2B- mässa för allmänheten. Vi presenterar även nya ”Mässmötet” med möjligheter för utställare att hålla en ”Pitch- och prova kvart” i sin egen monter som annonseras ut innan i programmet. Under denna eftermiddag får du en unik möjlighet att möta massor av nya presumtiva kunder på kort komprimerad tid. Kostnadsfritt och ingen föranmälan krävs</p>
+<img src="/businessmassan_website/static/src/img/AdobeStock_686433691-scaled.jpeg" class="img-fluid bm-img my-3" alt=""/>
+<h4 class="bm-h4 mt-3">Afterwork - businessbar</h4>
+<p>Kl. 17:00 – ca 21:00 BusinessBar med intresseväckande föreläsning från lokal näringslivsprofil, Möt en av Östergötlands mest inflytelserika personer — nyligen uppmärksammad på Maktbarometern som en av regionens största digitala makthavare. Vi avrunda mässdagen med spännande och tänkvärt föredrag samt nätverkande och After Work-mingel.</p>
+<img src="/businessmassan_website/static/src/img/AdobeStock_328012862-scaled.jpeg" class="img-fluid bm-img my-3" alt=""/>
+<h4 class="bm-h4 mt-3">Fler spännande nyheter</h4>
+<p>UF- torget. För våra unga entreprenörer som visar upp sina UF-företag för allmänheten kl 13-17 Best in show – vi utser bästa &amp; snyggaste montern</p>
+<h2 class="bm-h2 mt-5">Varför ställa ut?</h2>
+<h4 class="bm-h4 mt-3">Oavsett om du söker nya kunder, strategiska partners eller regionens bästa talanger är detta årets viktigaste affärsdag i Linköping</h4>
+<p><a href="/boka" class="bm-link">BOka din plats nu</a></p>
+<h3 class="bm-h3 mt-4">BM bjuder in – mötesplatsen för affärer &amp; nätverkande</h3>
+<div class="row align-items-center my-4"><div class="col-6 col-md-3 mb-3"><img src="/businessmassan_website/static/src/img/ABloggo-mindre.jpg" class="img-fluid bm-logo" alt=""/></div><div class="col-6 col-md-3 mb-3"><img src="/businessmassan_website/static/src/img/linkoping-rgb-300x85-1.png" class="img-fluid bm-logo" alt=""/></div><div class="col-6 col-md-3 mb-3"><img src="/businessmassan_website/static/src/img/NTMmedia.white_.png" class="img-fluid bm-logo" alt=""/></div><div class="col-6 col-md-3 mb-3"><img src="/businessmassan_website/static/src/img/bb-lkpg-2.png" class="img-fluid bm-logo" alt=""/></div></div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="page_lkpg" model="website.page">
+        <field name="name">Startsida</field>
+        <field name="url">/</field>
+        <field name="view_id" ref="view_lkpg"/>
+        <field name="is_published" eval="True"/>
+        <field name="website_indexed" eval="True"/>
+    </record>
+
+    <record id="view_boka" model="ir.ui.view">
+        <field name="name">businessmassan.boka</field>
+        <field name="type">qweb</field>
+        <field name="key">businessmassan_website.boka</field>
+        <field name="arch" type="xml">
+            <t name="Businessmässan Boka" t-name="businessmassan_website.boka">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure bm-page">
+                        <div class="container py-5">
+<p><a href="/" class="bm-link">Tillbaka</a></p>
+<h1 class="bm-h1">Årets Businessmässa 2026</h1>
+<p>LÄS SUMMERING 2025</p>
+<li>Kl 11-13 Exklusivt enbart för utställare &amp; inbjudna. Seminarium och nätverkslunch</li>
+<li>Kl 13 – 17 Mässan öppen för allmänheten</li>
+<li>Spännande företag med korta pitchar och Businesstorget för affärsmöten</li>
+<li>NYHET UF- Torget- Mer info och kontakt. Träffa morgondagens entreprenörer</li>
+<li>Exklusiv Mässbilaga – se mer info</li>
+<li>Aftermässa och BusinessBar kl 17.00 – Inspirationsföreläsning, möt en av regionens största digitala makthavare som skapat ett av Sveriges mest älskade varumärken grundat på omtanke &amp; mänsklighet</li>
+<h3 class="bm-h3 mt-4">Lunchseminarium för utställare och speciellt inbjudna</h3>
+<h2 class="bm-h2 mt-5">Navigera i en osäker omvärld – Från hotbild till motståndskraft</h2>
+<p>Dagens omvärldsläge ställer helt nya krav på företag. Cyberattacker, fysiska säkerhetsrisker och globala händelser flyter samman i en allt mer komplex hotbild.</p>
+<p>Det handlar inte om att sprida oro – utan om att bygga resiliens. Detta seminarium ger dig kunskapen, verktygen och modet att planera och agera i tid innan krisen inträffar.</p>
+<p>Du får med dig:</p>
+<p>Insikter om hur moderna, kombinerade hot påverkar din verksamhet.</p>
+<p>Konkreta strategier för att ställas steget före och säkra företagets framtid.</p>
+<p>Perspektiv från bland andra Anders Fernemark (Linköpings kommun).</p>
+<p>Missa inte ett av mässans viktigaste pass för dig som leder eller utvecklar företag!</p>
+<h3 class="bm-h3 mt-4">Inspirationsföreläsning kl 17:00 på BusinessBar</h3>
+<h2 class="bm-h2 mt-5">Hur bygger man ett varumärke grundat på omtanke, värme och mänsklighet?</h2>
+<p>Möt en av Östergötlands mest inflytelserika personer — nyligen uppmärksammad på Maktbarometern som en av regionens största digitala makthavare.</p>
+<p>Vad är det egentligen som gör att en enkel idé kan nå ända in i hjärtat på hundratusentals människor, dag efter dag? Hur bygger man inte bara ett framgångsrikt företag, utan ett av Sveriges mest älskade varumärken grundat på omtanke, värme och mänsklighet?</p>
+<p>Det blir en inspirerande och tänkvärd kväll om den osynliga kraften bakom framgången: konsten att nå fram i ett hårt samhällsklimat, modet att skala bort bruset och hemligheterna bakom att bygga ett varumärke som på riktigt berör.</p>
+<p>BusinessBar är en oberoende mötesplats som skapar möjligheter att hitta nya givande affärskontakter samt främjar företagande och entreprenörskap.</p>
+<p>Där framtidens entreprenörer möter dagens erfarenhet! Fler och fler från vårt näringsliv hittar till den sköna och avkopplande afterworken för företag</p>
+<h2 class="bm-h2 mt-5">Utställare 2026</h2>
+<li>ActiPro Event</li>
+<li>Arkösunds hotell</li>
+<li>BDO Revision</li>
+<li>Starby Spa Hotell &amp; Konferens</li>
+<li>FlowGuard WE AB</li>
+<li>Möllers Sverige</li>
+<li>Platinum Cars</li>
+<li>Coor i Sverige</li>
+<li>Coop Östra</li>
+<li>NyföretagarCentrum</li>
+<li>Digital Plattform</li>
+<li>Eventgänget Norrköping</li>
+<li>Exitpartner</li>
+<li>Engströms Bil</li>
+<li>Fastivio Fastighetsförvaltning</li>
+<li>Fin Dag</li>
+<li>Företagarna Linköping</li>
+<li>Veterankraft</li>
+<li>Jobcom</li>
+<li>Landeryds Golf</li>
+<li>Länsförsäkringar Östgöta</li>
+<li>Liberalerna</li>
+<li>Linköpings kommun</li>
+<li>ALMI Östergötland</li>
+<li>46Elks</li>
+<li>Nellborgs Cykel</li>
+<li>NTM Media</li>
+<li>Näringsliv &amp; Tillväxt</li>
+<li>Näringslivet möter förorten</li>
+<li>Ombergs Golf Resort</li>
+<li>Upphandlingsenheten Linköpings kommun</li>
+<li>Ung Företagsamhet</li>
+<li>Holmgrens Bil</li>
+<li>BNI Östergötland</li>
+<li>Herregud &amp; Co</li>
+<li>Dina Försäkringar</li>
+<li>Rejmes</li>
+<li>Samhall</li>
+<li>RP hållbar kontorsinredning</li>
+<li>StjärnaFyrkant Linköping</li>
+<li>Telefiluren</li>
+<li>TelloPrint</li>
+<li>Time2Care</li>
+<li>Tränkner Podcasting</li>
+<li>Randstad AB</li>
+<li>Bjurfors Linköping</li>
+<li>Smc &amp; Partners</li>
+<li>Corren</li>
+<li>Yrkesgymnasiet</li>
+<li>CWS Gear</li>
+<li>Öst Vent &amp; Isolering</li>
+<li>Mantorp Park Event</li>
+<li>Veterankraft</li>
+<li>Finnvedens Bil</li>
+<li>Visit Östergötland</li>
+<li>Volvo</li>
+<li>BusinessBar</li>
+<li>Östgötatrafiken</li>
+<li>Wörkwear</li>
+<li>Ung Företagsamhet Östergötland</li>
+<li>Östgötatidningen</li>
+<li>Östgötakök</li>
+<li>Skapandet - Björn Lisinski</li>
+<li>Support Profil &amp; Present</li>
+<li>SP Utemiljö</li>
+<li>Power Promotion</li>
+<h2 class="bm-h2 mt-5">Säkra din plats på årets mässa!</h2>
+<h3 class="bm-h3 mt-4">Boka er plats här!</h3>
+<h2 class="bm-h2 mt-5">Konsert &amp; Kongress Linköping</h2>
+<li>Monter liten 2×2 (väggar 2x1x1) 6 900 kr</li>
+<li>Monter stor 4×2 m (väggar 4x2x1) 10 900 kr</li>
+<li>Samverkanspartner med stor monter och möjligheter till föredrag från scen samt andra förmåner. Kontakta oss för upplägg och offert</li>
+<h2 class="bm-h2 mt-5">Sätt ditt företag i rampljuset – boka din plats redan idag!</h2>
+<p>Ta chansen att glänsa på årets efterlängtade mässa! Genom att säkra din monterplats tidigt ger du ditt företag en ovärderlig möjlighet att nätverka med branschledare, visa upp era senaste produkter för en bred publik och knyta nya, värdefulla affärskontakter. Som utställare deltar du exklusivt på “Spännande scenprogram samt Businesslunch” kl 11-13 innan mässan öppnar för allmänheten kl 13-17. Sista bokning av monterplats 29/10</p>
+<h3 class="bm-h3 mt-4">Varför boka tidigt</h3>
+<li>Bästa placeringen: Säkra en strategisk och väl synlig plats på mässgolvet innan de bästa försvinner.</li>
+<li>Exklusiv pitchtid: Få chansen att pitcha ditt erbjudande direkt till potentiella kunder och samarbetspartners.</li>
+<li>Medverka i vår nya mässtidning och få synlighet inför mässan via Corren Print &amp; E-tidning. Tidningen finns även på plats under mässan. Boka din plats redan nu!”</li>
+<li>Vänta inte – de bästa platserna går först!</li>
+<p>Fyll i formuläret nedan för att säkra din plats på mässan eller mejla till info@businessmassan.se</p>
+<p>Höjd monterväggar: 2,5 m. Bord, stolar, el, annan utrustning samt lunch beställs separat senare.</p>
+<li>Monter 2×2 (väggar 2x1x1) 6 900 kr</li>
+<li>Monter 4×2 m (väggar 4x2x1) 10 900 kr</li>
+<li>Samverkanspartner med möjligheter till föredrag från scen samt andra fördelar som partners. Kontakta oss för upplägg och offert</li>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="page_boka" model="website.page">
+        <field name="name">Boka</field>
+        <field name="url">/boka</field>
+        <field name="view_id" ref="view_boka"/>
+        <field name="is_published" eval="True"/>
+        <field name="website_indexed" eval="True"/>
+    </record>
+
+    <record id="view_for_utstallare" model="ir.ui.view">
+        <field name="name">businessmassan.for-utstallare</field>
+        <field name="type">qweb</field>
+        <field name="key">businessmassan_website.for-utstallare</field>
+        <field name="arch" type="xml">
+            <t name="Businessmässan För utställare" t-name="businessmassan_website.for-utstallare">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure bm-page">
+                        <div class="container py-5">
+<h2 class="bm-h2 mt-5">Businessmässan 2026</h2>
+<p>Välkommen som utställare på Businessmässan i Linköping som kommer att hållas på Konsert &amp; Kongress 12 nov.</p>
+<p>Denna sida är info för dig som redan bokat monterplats! Bokar monter gör du från startsidan</p>
+<p>Nedan finns information och villkor som är bra att känna till när Ni planerar Ert mässdeltagande.</p>
+<p>Fina möjligheter att beställa utrustning till er monter via KONSERT &amp; KONGRESS BESTÄLLNINGSLISTA</p>
+<p>Bord, stolar, el, montermatta, internet, kaffe, lunch beställer ni via via KONSERT &amp; KONGRESS.</p>
+<p>BESTÄLLNINGSLISTA längre ned på sidan</p>
+<p>SISTA ANMÄLAN 29/10</p>
+<p>Utställarinfo Businessmässan 12 nov – PDF</p>
+<h2 class="bm-h2 mt-5">Nyheter!</h2>
+<p>NYHETER 2026</p>
+<li>Exklusivt seminarium &amp; lunchmingel kl. 11.00 – 13.00 bara för dig som utställare. Beställ lunchmingeltallrik här</li>
+<li>Mässan öppnar för allmänheten kl 13.00</li>
+<li>UF-torget – för våra unga entreprenörer</li>
+<li>Spännande företag och intresseväckande pitchar kl 13-17</li>
+<li>Bättre komprimerad mässa med bara en öppen entré</li>
+<li>Aftermässa &amp; BusinessBar kl 17 – Beställ mingeltallrik här</li>
+<p>OBS! MONTER SKA VARA FÄRDIGSTÄLLD 12/11 KL 11.00 SÅ ATT SAMTLIGA UTSTÄLLARE SKA KUNNA MEDVERKA PÅ EXKLUSIVA LUNCHMINGLET KL 11-13 (MISSA INTE ATT FÖRBESTÄLLA LUNCHTALLRIK OM NI VILL HA DET)</p>
+<p>MÄSSAN PÅGÅR TILL KL 17.00, DETTA INNEBÄR ATT INGEN BÖRJAR PACKA IHOP INNNA KL 17.00, VAR VÄNLIG RESPEKTERA DETTA!</p>
+<p>MONTERSKISS Businessmässan 2026 (kommer)</p>
+<p>FRAKT OCH GODSHANTERINGLeveransadress vid försändelser till mässan/utställningen:</p>
+<p>Linköping Konsert &amp; KongressKonsistoriegatan 7582 22 Linköping</p>
+<p>Vid försändelser som kräver lossning med truck, måste detta förbeställas då truck annarsej finns att tillgå . Kostnad 795:- per timme.</p>
+<p>GODSMÄRKNING</p>
+<p>UTSTÄLLNING: Businessmässa 2026DATUM: 12 november 2026MONTERNUMMER:FÖRETAGSNAMN:MONTERANSVARIG: Detta ska finnas med på godset</p>
+<p>Inlast sker lämpligast via Konsistoriegatan 7, dock kan andra entréer vara aktuellaberoende på arrangemangets karaktär.</p>
+<p>MAX HÖJD: 2,45MAX BREDD: 2,10</p>
+<p>MOTTAGNING GODS TIDIGAST 12/11 2026I annat fall debiteras lagerhyra. Detta avgår enligt emballageförvarings kostnad.AVHÄMTNING GODS SENAST 13/11 2025I annat fall debiteras lagerhyra. Detta avgår enligt emballageförvarings kostnad.</p>
+<p>FÖR RETUR AV GODS KRÄVS IFYLLDA FRAKTSEDLAR SOM SÄTTS PÅ GODSET SAMT KONTAKT MEDFRAKTFIRMA.Ta kontakt med oss om du önskar hjälp med frakthanteringen efter utställningen.</p>
+<h3 class="bm-h3 mt-4">MATERIALLBESTÄLLNING:</h3>
+<p>Beställningslista</p>
+<p>Beställningslistan ifylls med faktura- och kontaktuppgifter samt eventuell materialbeställning. Denna kommer att signeras på plats.</p>
+<p><a href="https://ext1.visitlinkoping.se/exhibition/index.html" class="bm-link">BESTÄLLNINGSLISTA MATERIAL TILL MONTERN</a></p>
+<p>Beställningslistan ska vara tillhanda senast Konsert &amp; Kongress : 29/10 2026OBS! Höjd materialkostnad vid beställning efter utsatt datum samtunder arrangemanget. Priset uppgår till 50% ökning av ordinarie pris.</p>
+<p>INFLYTT12/11 202607:00 – 11:00MÄSSAN HÅLLER ÖPPET:12/11 202613:00 – 17:00(montern skall då vara färdigställd och allt emballage borttaget)Pallar och emballage får ej förvaras synligt i och omkring din monter, utan tas omhand av Konsert &amp; Kongress.Avgift för detta tas ut. Pris enligt beställningslistan.</p>
+<p>Er monteryta hittar ni på utställningsskiss i anslutning till utställningslokalen, ytan är även märkt medenmonternummer och företagsnamn. Eventuellt gods som skickats till Konsert &amp; Kongress är placerat i er monter.</p>
+<p>Liten monter 2×2 m (väggar 2x1x1) Stor monter 4×2 m (väggar 4x1x1) Alla sidoväggar är 1 m om ingen annan ök Höjd på väggar är 2,5 m</p>
+<p>På plats finns utställarservice som är behjälpliga med såväl vägvisning som kompletterande Konsert &amp; Kongressbeställningar av montermaterial.</p>
+<p>UTFLYTT12/11 202617:00-19:00* se rubrik frakt- och godshantering</p>
+<h3 class="bm-h3 mt-4">INTERNET</h3>
+<p>Vårt trådlösa nätverk styr om nätverkstrafiken till en inloggningssida med https.Då internet är otillgängligt under inloggningen certifierar inloggningssidan sig själv. För att använda vårttrådlösa nätverk krävs att datorn tillåter både omstyrning och självcertifiering. Ko gärna detta med er IT-ntrolleraavdelning. äkerhetsprogrammet F-Secure kan förbjuda detta. Problemet uppstår framförallt iSInternet Explorer. För att få access till det trådlösa nätverket erhåller du inloggnings uppgifter, som finns i dinmonter om du beställt innan eller hämtar ut i vår reception.</p>
+<h3 class="bm-h3 mt-4">PARKERING</h3>
+<p>För att in-/utflytt av större utställningar ska fungera så smidigt som möjligt, planera så att endast ett kortarestopp krävs för in-/urlastning och att fordonet därefter flyttas till någon av de intilliggande parkeringarna (ca 3-5 min gångväg). Vagnar, truckar och säckkärror finns att låna. Parkering på Konsert &amp; kongress är begränsad.Parkering är förbjuden på torget vid entrén. Hänvisning ges till den befintliga parkeringen. Vid mån av plats kanparkering beställas innan via beställningslistan (först till kvarn). Kostnad 100:- per dygn.</p>
+<img src="/businessmassan_website/static/src/img/map.png" class="img-fluid bm-img my-3" alt=""/>
+<h2 class="bm-h2 mt-5">FÖRHÅLLNINGSREGLER</h2>
+<h3 class="bm-h3 mt-4">FÖRSÄLJNING</h3>
+<p>Från och med den 1 januari 2010 ska företag som säljer varor eller tjänster mot kontant betalning ha ett certifieratkassaregister (enligt Lag (2007:592) om kassaregister m.m ). Vänligen kontrollera om ditt företag kan vara undantaget denna.lag. Enligt lagen finns generella undantag där torg- och marknadshandel är ett av dessa. Med torg- och marknadshandelavses försäljning som sker från torg, gator, marknader, mässor, loppmarknader, idrottsgalor, festivaler, tillfälligt utnyttjadelokaler eller liknande. (Skatteverkets meddelande SKV M 2009:3).</p>
+<h3 class="bm-h3 mt-4">ALKOHOLREGLER/FÖRTÄRING</h3>
+<p>Vår restauratör innehar mat- och alkoholtillstånd i våra lokaler. I enlighet med svenskalkohollagstiftning måste all alkohol som serveras vara inköpt av innehavaren av serveringstillståndet på Konsert &amp; Kongress .Visit Linköping AB ansvarar för all utskänkning. Det är heller inte tillåtet att bjuda på någon mat i montrarna om de inte är beställda via vår restauratör.</p>
+<p>Beställning Lunchmingeltallrik kl 12.00</p>
+<p>Beställning Mingeltallrik till Aftermässa /BusinessBar KL 17.00</p>
+<h3 class="bm-h3 mt-4">INREDNING OCH VÄGGAR</h3>
+<p>Alla sidoväggar är 1 m om ingen annan ök</p>
+<p>Fästkuddar får inte användas på material eller inredning. Godkänd dubbelhäftande tejp finns att köpa påKonsert &amp; Kongressplats av utställarservice. På väggar, och inredning är det inte tillåtet att använda häftpistol, spik eller annat som kan förstöra ytoreller lackering. Då vi finner detta kommer ansvarig utställare att bli debiterad. Detta av en kostnad på 495:- Samt eventuellaarbetskostnader som detta medför. Behov av monterväggar som går att måla samt tapetseras på beställs separat.</p>
+<h3 class="bm-h3 mt-4">BRAND</h3>
+<p>Monterväggar och tak skall utföras av svårantändligt material, det vill säga inte sämre än trä. Spånskiva, träfiberskiva (ejporös), plywood och dylikt godtas. Textilier skall vara impregnerade mot brand.</p>
+<h3 class="bm-h3 mt-4">GASER OCH VÄTSKOR</h3>
+<p>Inga brandfarliga, frätande eller giftiga gaser/vätskor får införas eller förvaras I lokaler. Heta arbetenKonsert &amp; Kongresssom svetsning, lödning, skärning, rondellarbete, torkning, uppvärmning eller öppen låga får inte förekomma ens undermonterbyggnadstiden.</p>
+<h3 class="bm-h3 mt-4">ELEKTRICITET</h3>
+<p>All elektrisk installation skall vara utförd enligt gällande starkströmsföreskrifter. förehåller sig rätten attKonsert &amp; Kongressunder mässan placera ut fler strömkällor mot debitering om din monter inte beställt tillräcklig kapacitet för ändamålet.</p>
+<h3 class="bm-h3 mt-4">UTRYMMNINGSVÄGAR</h3>
+<p>Utrymningsvägar, utrymningsdörrar, brandredskap, larmtryckknappar och skyltar får aldrig blockeras eller skymmas.Konsert &amp; Kongress har rätt att, på utställarens bekostnad, transportera bort gods som blockerar utrymnings- ochtransportvägar.</p>
+<h3 class="bm-h3 mt-4">FÖRSÄKRING/ANSVAR</h3>
+<p>Konsert &amp; Kongress tar inget ansvar för utställares värdesaker/utrustning. Det är upp till varje utställare att se till att erforderligaförsäkringar finns för medtagen utrustning. Konsert &amp; Kongress ansvarar ej heller för kvarlämnat gods.</p>
+<h3 class="bm-h3 mt-4">KONTAKT UTSTÄLLARSERVICE</h3>
+<p>Vi ser fram emot att välkomna er till oss och vi kommer att göra vårt bästa för att ert arrangemang ska bli lyckat.Vid frågor rörande utställningen välkomna att kontakta Evenemang service pås013-190 00 16 eller maila på exhibition@konsertkongress.se</p>
+<p>AVBOKNING AV MÄSSMONTER ELLER MATERIAL ETC. EFTER 1/10 DEBITERAS FULL AVGIFT</p>
+<li>Anders Björck</li>
+<li>info@businessmassan.se</li>
+<li>013-10 09 10, 070-630 10 69</li>
+<p>Få senaste nytt direkt till din e-post!</p>
+<p>© 2026 All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="page_for_utstallare" model="website.page">
+        <field name="name">För utställare</field>
+        <field name="url">/for-utstallare</field>
+        <field name="view_id" ref="view_for_utstallare"/>
+        <field name="is_published" eval="True"/>
+        <field name="website_indexed" eval="True"/>
+    </record>
+
+    <record id="view_program" model="ir.ui.view">
+        <field name="name">businessmassan.program</field>
+        <field name="type">qweb</field>
+        <field name="key">businessmassan_website.program</field>
+        <field name="arch" type="xml">
+            <t name="Businessmässan Program" t-name="businessmassan_website.program">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure bm-page">
+                        <div class="container py-5">
+<h2 class="bm-h2 mt-5">Program 2025</h2>
+<h4 class="bm-h4 mt-3">Lyssna på intresseväckande föreläsningar inom specifika områden där du kan få smarta idéer hur man bl a kan arbeta med hållbarhet inom just din bransch. Föredragen är korta (ca 20 min)</h4>
+<h4 class="bm-h4 mt-3">Nyheter i år är att vi kryddar programmet med livepodd från scen och ett spännande “Big Business Speedmeeting” samt avslutningsvis efter sista scenframträdandet är det utlottning av härlig spadag på The Box hotell och goodiebag till alla närvarande deltagare i lokal “Musikalen”</h4>
+<p>Moderator Robert Wallin – på scen i lokal “Musikalen”</p>
+<p>(Program – kan justeras)</p>
+<h2 class="bm-h2 mt-5">KL. 13.00 Invigning</h2>
+<h2 class="bm-h2 mt-5">Årets Businessmässa öppnas av Niklas Borg</h2>
+<p>Niklas Borg (M) – Kommunalråd, förste vice ordförande kommunstyrelsen och ansvarig för näringslivsfrågor</p>
+<h2 class="bm-h2 mt-5">KL 13.30 Livepodd:</h2>
+<h2 class="bm-h2 mt-5">Mode, funktion och hållbarhet - Att bygga ett varumärke med tydliga värderingar</h2>
+<p>Maria Seraki grundare MWH Sweden – Livepodd Entreprenörsdriv med Tomas Tränkner</p>
+<li>LÄS MER</li>
+<h2 class="bm-h2 mt-5">KL. 14.00 Föreläsning</h2>
+<h2 class="bm-h2 mt-5">Älska att vinna!</h2>
+<p>Fredrik Johnson – näringslivsprofil, entreprenör och mångårig elitidrottare</p>
+<li>LÄS MER</li>
+<h2 class="bm-h2 mt-5">KL 14.30 Föreläsning</h2>
+<h2 class="bm-h2 mt-5">Säkra verksamheters största risk först!</h2>
+<p>Karin Jonsson – Hjärnans försvarare i AI-racet. Demokratistödassistent och NLP-coach</p>
+<li>LÄS MER</li>
+<h2 class="bm-h2 mt-5">KL. 15.00 Speedmeeting</h2>
+<h2 class="bm-h2 mt-5">BIG BUSINESS SPEEDMEETING</h2>
+<p>Välkommen på 45 minuters speedmeeting, mässans hetaste mötesplats där vi mixar och blandar flera av Linköpings framstående affärsnätverk. Fullbokad!</p>
+<li>LÄS MER &amp; ANMÄL DIG</li>
+<h2 class="bm-h2 mt-5">KL 16.00 Föreläsning</h2>
+<h2 class="bm-h2 mt-5">Så får vi "Generation scroll" att bry sig om lokala nyheter</h2>
+<p>Christer Kustvik – chefredaktör Corren</p>
+<li>LÄS MER</li>
+<h2 class="bm-h2 mt-5">KL 16.20 SEMINARIUM</h2>
+<h2 class="bm-h2 mt-5">Varför satsar ett nationellt varumärke på den lokala marknaden?</h2>
+<p>Jacob Corlin, Hotelldirektör Quality Hotel , Kenth Gustafsson &amp; Mathias Öhrman från NTM Media</p>
+<li>LÄS MER</li>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="page_program" model="website.page">
+        <field name="name">Program</field>
+        <field name="url">/program</field>
+        <field name="view_id" ref="view_program"/>
+        <field name="is_published" eval="True"/>
+        <field name="website_indexed" eval="True"/>
+    </record>
+
+    <record id="view_nkpg" model="ir.ui.view">
+        <field name="name">businessmassan.nkpg</field>
+        <field name="type">qweb</field>
+        <field name="key">businessmassan_website.nkpg</field>
+        <field name="arch" type="xml">
+            <t name="Businessmässan Norrköping" t-name="businessmassan_website.nkpg">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure bm-page">
+                        <div class="container py-5">
+<img src="/businessmassan_website/static/src/img/BM-original-Nkpg-vit.png" class="img-fluid bm-img my-3" alt=""/>
+<h1 class="bm-h1">Årets viktigaste mötesplats för Norrköpings näringsliv</h1>
+<p>Äntligen så har Norrköping en Ny Näringslivsmässa. Den 24 april så intog företag, organisationer och många besökare vackra Flygeln i Norrköping</p>
+<p>Det var massor med stilrena hållbara montrar och en härlig energi bland alla utställare på plats. Det var ca 50-talet utställare och en fin bredd och imponerande blandning av mestadels företag och organisationer från Norrköping, men även glädjande företag från andra kommuner som gärna ville visa upp sig och sina verksamheter i den heta Östgötaregionen.</p>
+<p>Mässan och mötesplatsen innehöll även spännande föreläsningar med mycket fokus på hållbarhet och allt skickligt modererat av Frida Södermark från scen. Det var framför allt föreläsare från utställare som fanns på plats, och det pratades ämnen såsom kommunikation, företagsöverlåtelser, styrelsearbete, ledarskap och AI mm.</p>
+<p>Det blev ett riktigt fullmatat program med hållbar business på agendan och intresseväckande föreläsare som gav ett stort mervärde åt mötesplatsen</p>
+<p>Det var många nyfikna besökare som verkligen fick se bredden inom näringslivet och ta del av intressanta korta rappa föreläsningar samt få en möjlighet att nätverka bland utställare och andra besökare. När mässan sedan stängde så kunde vi konstatera att det varit över 1000 personer på plats och det var mycket glada miner och en efterlängtad premiär!</p>
+<p>Håll utkik efter nytt datum sensommar/höst 2026</p>
+<p>BM NKPG -25 Summering</p>
+<p><a href="/monterskiss-bm-nkpg-24-april-2025" class="bm-link">UTSTÄLLARKARTA</a></p>
+<p><a href="/for-utstallare-i-nkpg" class="bm-link">info för UTSTÄLLARE</a></p>
+<h3 class="bm-h3 mt-4">Välkommen!</h3>
+<p>När? Torsdag 24 april kl 12-17</p>
+<p>VAR? Flygeln Norrköping</p>
+<img src="/businessmassan_website/static/src/img/AdobeStock_590742789-scaled.jpeg" class="img-fluid bm-img my-3" alt=""/>
+<h4 class="bm-h4 mt-3">Mässa med utställare</h4>
+<p>Placera ditt varumärke i centrum för beslutsfattare och potentiella kunder. Det är din chans att visa upp dina produkter, bygga värdefulla relationer och få direktkontakt med det lokala näringslivet i Norrköping. 50-talet utställare och massor med andra företag på plats! Fritt inträde!</p>
+<img src="/businessmassan_website/static/src/img/AdobeStock_328012862-scaled.jpeg" class="img-fluid bm-img my-3" alt=""/>
+<h4 class="bm-h4 mt-3">Föreläsningar – fokus hållbarhet</h4>
+<p>Delta i inspirerande föreläsningar där branschledare delar insikter och framtidstrender. Maximera din tid och skapa värdefulla kontakter på plats! Föredragen kommer ha mycket fokus på "hållbar business" och vara ca 25 min långa. Fritt inträde (Program under uppbyggnad)</p>
+<h2 class="bm-h2 mt-5">Medverka aktivt! - Du kommer att möta massor av presumtiva kunder på kort tid</h2>
+<p><a href="/boka-nkpg" class="bm-link">Vill du också synas?</a></p>
+<h3 class="bm-h3 mt-4">BM bjuder in – mötesplatsen för affärer &amp; nätverkande</h3>
+<div class="row align-items-center my-4"><div class="col-6 col-md-3 mb-3"><img src="/businessmassan_website/static/src/img/Foretagarna-LKPG-logga-white.png" class="img-fluid bm-logo" alt=""/></div><div class="col-6 col-md-3 mb-3"><img src="/businessmassan_website/static/src/img/linkoping-rgb-300x85-1.png" class="img-fluid bm-logo" alt=""/></div><div class="col-6 col-md-3 mb-3"><img src="/businessmassan_website/static/src/img/NTMmedia.white_.png" class="img-fluid bm-logo" alt=""/></div><div class="col-6 col-md-3 mb-3"><img src="/businessmassan_website/static/src/img/bb-lkpg-2.png" class="img-fluid bm-logo" alt=""/></div></div>
+<p>© 2024 All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="page_nkpg" model="website.page">
+        <field name="name">Norrköping</field>
+        <field name="url">/nkpg</field>
+        <field name="view_id" ref="view_nkpg"/>
+        <field name="is_published" eval="True"/>
+        <field name="website_indexed" eval="True"/>
+    </record>
+
+    <record id="view_boka_nkpg" model="ir.ui.view">
+        <field name="name">businessmassan.boka-nkpg</field>
+        <field name="type">qweb</field>
+        <field name="key">businessmassan_website.boka-nkpg</field>
+        <field name="arch" type="xml">
+            <t name="Businessmässan Boka NKPG" t-name="businessmassan_website.boka-nkpg">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure bm-page">
+                        <div class="container py-5">
+<h1 class="bm-h1">Träffa massor av medverkande företag på plats</h1>
+<p>Missa inte denna fina möjlighet att på kort tid möta massor med nya presumtiva kunder inom Norrköpings näringsliv, och du som företagare utanför Norrköping, det blir nog inte bättre tillfälle att nå företag i just Norrköping!</p>
+<p>Att finnas med som utställare under hela eftermiddagen kommer att generera många nya kunder! Boka monterplats, se info längre ned på sidan.</p>
+<p>För kännedom arrangeras Norrköpings Företagargala senare på kvällen i Värmekyrkan, så detta blir en fantastisk dag och kväll i näringslivet och företagandets tecken!</p>
+<h2 class="bm-h2 mt-5">Medverkande 24 april</h2>
+<li>ActiPro Event</li>
+<li>Bergman Vision</li>
+<li>Centric Professionals</li>
+<li>Digital Plattform</li>
+<li>Elite Hotell</li>
+<li>FIN Dag</li>
+<li>Företagarna Norrköping</li>
+<li>Holmgrens Bil</li>
+<li>alltid.IT</li>
+<li>Eventgänget</li>
+<li>Exit Partner</li>
+<li>Jolly Food</li>
+<li>Marknad Östergötland</li>
+<li>Bråviken Bil Norrköping</li>
+<li>Livgrenadjärmässen</li>
+<li>Paragera</li>
+<li>Liberalerna</li>
+<li>Revise Sverige</li>
+<li>Landeryds Golf</li>
+<li>Roliga Rader UF</li>
+<li>B-Salus</li>
+<li>SandSvensson Group</li>
+<li>ProKeep</li>
+<li>Secor / ANSI Säkerhetsdörrar</li>
+<li>Länsförsäkringar Östgöta</li>
+<li>LinkedinCoach</li>
+<li>RP hållbar kontorsinredning</li>
+<li>SmashFit/ Time2Care</li>
+<li>Trece</li>
+<li>Åhlenius Strateger</li>
+<li>NT - Norrköpings Tidningar</li>
+<li>Östgötatrafiken</li>
+<li>Bra Relationer</li>
+<li>Montico</li>
+<li>Rekomo</li>
+<li>NTM</li>
+<li>Styrelseakademien Öst</li>
+<li>Ombergs golf resort</li>
+<li>Linköpings Skog &amp; Trädgård</li>
+<li>Loopia AB</li>
+<li>Anna Lövheim AB</li>
+<li>Järsjö Power &amp; Passion AB</li>
+<li>Card4Action</li>
+<li>Löparäventyret</li>
+<li>Easy Coffe</li>
+<li>Mannes Film och Foto</li>
+<li>ErgoNova</li>
+<h3 class="bm-h3 mt-4">Boka er plats här!</h3>
+<p>Boka din monterplats och ge ditt företag möjlighet att nätverka, visa upp era produkter och knyta nya kontakter. Fyll i formuläret nedan för att säkra din plats på mässan eller mejla till info@businessmassan.se</p>
+<p>Liten enkel monter: 2×2 m (utan monterväggar) Fullbokat, begr. antalLiten monter: 2×2 m (väggar 2x1x1)Stor enkel monter: 3×2 m (utan monterväggar)Stor monter: 3×2 m (väggar 3x1x1) Möjlighet att hålla föredrag fr scenNyföretagarpaket/ståbord (För nystartade bolag och ideella föreningar)</p>
+<p>Höjd monterväggar: 2,5 m. Bord, stolar, el beställs separat senare (om man inte har egen utrustning)</p>
+<p>Sista anmälan 11 april</p>
+<p>Avbokning mindre än 2 v innan, debiteras full avgift</p>
+<p>Liten enkel monter: 5 900 kr (fullbok) Liten monter: 6 900 kr Stor enkel monter: 7 700 kr Stor monter: 8900 kr Föreningsbord/Ståbord: 2 500 kr/st Samarbetspartner! Offert (Alla priser ex moms) Vi är intresserade av att hålla föredrag JA NEJ Företag DItt Förnamn DItt Efternamn Din E-post Din Telefon Skicka bokning! Anders Björck info@businessmassan.se 013-10 09 10, 070-630 10 69 Linkedin Få senaste nytt direkt till din e-post!</p>
+<p>© 2026 All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="page_boka_nkpg" model="website.page">
+        <field name="name">Boka NKPG</field>
+        <field name="url">/boka-nkpg</field>
+        <field name="view_id" ref="view_boka_nkpg"/>
+        <field name="is_published" eval="True"/>
+        <field name="website_indexed" eval="True"/>
+    </record>
+
+    <record id="view_for_utstallare_i_nkpg" model="ir.ui.view">
+        <field name="name">businessmassan.for-utstallare-i-nkpg</field>
+        <field name="type">qweb</field>
+        <field name="key">businessmassan_website.for-utstallare-i-nkpg</field>
+        <field name="arch" type="xml">
+            <t name="Businessmässan För utställare NKPG" t-name="businessmassan_website.for-utstallare-i-nkpg">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure bm-page">
+                        <div class="container py-5">
+<h2 class="bm-h2 mt-5">Businessmässan 2025</h2>
+<p>Välkommen som utställare på Businessmässan i Norrköping som kommer att hållas i Flygeln Norrköping 24 april kl 12-17. Nedan finns information och villkor som är bra att känna till när Ni planerar Ert mässdeltagande.</p>
+<p>Fina möjligheter att beställa utrustning till er monter via ELITE BESTÄLLNINGSLISTA</p>
+<p>Bord, stolar, el, montermatta, internet beställer ni via Elite, se länk nedan</p>
+<p>INFLYTTNING24/4 202507:30 – 11:30</p>
+<p>MÄSSAN HÅLLER ÖPPET:24/4 202512:00 – 17:00</p>
+<p>UTFLYTT24/4 202517:00-19:00</p>
+<p>GODSMÄRKNING</p>
+<p>Gods skickas till Louis De Geer konsert &amp; kongress, Holmengatan 24, 602 32 Norrköping, märk gods med Businessmässan samt monternummer/namn. Gods tas emot måndag 21 april.</p>
+<h3 class="bm-h3 mt-4">MATERIALLBESTÄLLNING:</h3>
+<p>Beställningslistan ifylls med faktura- och kontaktuppgifter samt eventuell materialbeställning. Denna kommer att signeras på plats.</p>
+<p>Liten enkel monter 2×2 m (utan väggar) LITEN MONTER 2×2 m (med väggar 2x1x1) Stor enkel monter 3 x2 m (utan väggar STOR MONTER 3×2 (med väggar 3x1x1) Alla sidoväggar är 1 m om ingen annan ök Höjd på väggar är 2,5 m</p>
+<p><a href="/wp-content/uploads/2025/03/LOUIS-DE-GEER-BUSINESSMASSAN-25.xlsx" class="bm-link">Beställningslista</a></p>
+<h3 class="bm-h3 mt-4">Allmänna bestämmelser för utställare i samband med Businessmässan 24 april 2025</h3>
+<p>INFLYTTNINGInflyttning och byggnation kan ske torsdag 24 april kl. 07.30-11.30.</p>
+<p>MÄSSANS ÖPPETTIDERMässan är öppen torsdag 24 april kl.12.00-17.00.</p>
+<p>KOMPLETTERANDE UTRUSTNINGMöjlighet att hyra monterutrustning (möbler, ljud/ljus, bildskärmar m m) finns. Beställning sker via Monterservices beställningsunderlag.</p>
+<p>MONTERI monterhyran ingår beställd yta.</p>
+<p>UTSTÄLLARE ÄGER EJ RÄTTEN ATT:– spela musik eller ha andra ljud i montern som stör övriga utställare.– bryta mot brandmyndighetens eller Louis De Geers bestämmelser beträffande brandsäkerhet– sprida reklam utanför montern eller använda yta utanför egen monter.– ta med egen förtäring eller dryck, undantaget godis.</p>
+<p>SERVERING I MONTERHar Du önskemål att bjuda på mat och dryck i montern, kontakta Louis De Geer konsert &amp; kongress</p>
+<p>Lunch – förbeställning</p>
+<p>OBS! Förbokning av kycklingsallad med risoni &amp; ramslökscreme, bröd samt kolsyrat vatten: 125 kr p/p ex. moms.</p>
+<p>Bokas senast tisdag 22 april kl.14.00, via liselotte.andersson @elite.se</p>
+<p>ANVÄNDANDE AV UPPGIFTERUtställaren medger att uppgifter som lämnas på anmälan får datorregistreras av Louis De Geer samt lämnas till tredje man för ev. marknadsföringsaktiviteter, utställarförteckningar, m.m. Utställaren samtycker också till att nödvändiga personliga uppgifter får registreras och behandlas enligt PUL (Personuppgiftslagen).</p>
+<p>FÖRSÄKRINGUtställaren ansvarar för sin egen utrustning.</p>
+<p>STÄDNINGLouis De Geer svarar för allmän renhållning. Det åligger utställaren att hålla rent på hyrt område. Önskar Du beställa extra städ av montern, kontakta Louis De Geer</p>
+<p>SOPHANTERINGPå anvisad plats kan Du lämna plattade kartonger, soptunnor finns utplacerat i utställningsområdet</p>
+<p>UTFLYTTNINGUtflyttning sker torsdag 24 april kl. 17.00-18.00</p>
+<p>KONTAKT &amp; MÄSSUPPORTFrågor gällande lokaler, förtäring m m på Louis De Geer Konsert &amp; Kongress, kontakta:Liselotte Andersson liselotte.andersson @elite.se + 4611-450 29 41</p>
+<p>OBS! Under mässan kommer fotografering och filmning pågå, om du inte vill finnas med på bilder etc. kontakta Anders på info@businessmassan.se</p>
+<li>Anders Björck</li>
+<li>info@businessmassan.se</li>
+<li>013-10 09 10, 070-630 10 69</li>
+<p>Få senaste nytt direkt till din e-post!</p>
+<p>© 2026 All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="page_for_utstallare_i_nkpg" model="website.page">
+        <field name="name">För utställare NKPG</field>
+        <field name="url">/for-utstallare-i-nkpg</field>
+        <field name="view_id" ref="view_for_utstallare_i_nkpg"/>
+        <field name="is_published" eval="True"/>
+        <field name="website_indexed" eval="True"/>
+    </record>
+
+    <record id="view_program_nkpg" model="ir.ui.view">
+        <field name="name">businessmassan.program-nkpg</field>
+        <field name="type">qweb</field>
+        <field name="key">businessmassan_website.program-nkpg</field>
+        <field name="arch" type="xml">
+            <t name="Businessmässan Program NKPG" t-name="businessmassan_website.program-nkpg">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure bm-page">
+                        <div class="container py-5">
+<h2 class="bm-h2 mt-5">Program</h2>
+<h4 class="bm-h4 mt-3">2025-04-24 Kl. 12-17</h4>
+<h4 class="bm-h4 mt-3">Hållbar Business i Norrköping</h4>
+<h4 class="bm-h4 mt-3">Lyssna på intresseväckande föreläsningar inom specifika områden där du kan få smarta idéer hur man bl a kan arbeta med hållbarhet inom just din bransch. Föredragen är korta (25 min) och konkreta med syfte att du ska kunna ta med några handfasta tips från varje föredrag</h4>
+<h4 class="bm-h4 mt-3">Moderator – Frida Södermark</h4>
+<h2 class="bm-h2 mt-5">Föreläsning 12.05</h2>
+<h2 class="bm-h2 mt-5">Kommunikation som träffar rätt - och ger effekt</h2>
+<p>Magnus Linde – NTM MEDIA</p>
+<li>LÄS MER</li>
+<h2 class="bm-h2 mt-5">Föreläsning kl 12.45</h2>
+<h2 class="bm-h2 mt-5">Digitalt berättade i en ny tid</h2>
+<p>Fredrik Lagerqvist – NORRKÖPINGS TIDNINGAR</p>
+<li>LÄS MER</li>
+<h2 class="bm-h2 mt-5">FÖRELÄSNING kl 13.15</h2>
+<h2 class="bm-h2 mt-5">"TILLIT - vägen till hållbart ledarskap"</h2>
+<p>Sverker Wadstein- BRA RELEATIONER</p>
+<li>LÄS MER</li>
+<h2 class="bm-h2 mt-5">FÖRELÄSNING 13.45</h2>
+<h2 class="bm-h2 mt-5">Värdeskapande styrelsearbete</h2>
+<p>Louise Lennersten – STYRELSEAKADEMIEN ÖSTSVERIGE</p>
+<li>LÄS MER</li>
+<h2 class="bm-h2 mt-5">FÖRELÄSNING 14.15</h2>
+<h2 class="bm-h2 mt-5">Är ni rustade för att växa i en AI- &amp; teknikdriven era?</h2>
+<p>Adrian Rosca – DIGITAL PLATTFORM</p>
+<li>LÄS MER</li>
+<h2 class="bm-h2 mt-5">Föreläsning kl 15.00</h2>
+<h2 class="bm-h2 mt-5">Social hållbarhet - en framgångsfaktor i ditt företagande</h2>
+<p>Anette Åhlenius – ÅHLENIUS STRATEGER</p>
+<li>LÄS MER</li>
+<h2 class="bm-h2 mt-5">Föreläsning 15.30</h2>
+<h2 class="bm-h2 mt-5">Gör din företagsöverlåtelse hållbar över tid</h2>
+<p>Roger Eriksson – EXITPARTNER</p>
+<li>LÄS MER</li>
+<h2 class="bm-h2 mt-5">FÖRELÄSNING 16.00</h2>
+<h2 class="bm-h2 mt-5">Hållbara medarbetare - kunskaper från en idrottares perspektiv</h2>
+<p>Frida Södermark – LÖPARÄVENTYRET</p>
+<li>LÄS MER</li>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="page_program_nkpg" model="website.page">
+        <field name="name">Program NKPG</field>
+        <field name="url">/program-nkpg</field>
+        <field name="view_id" ref="view_program_nkpg"/>
+        <field name="is_published" eval="True"/>
+        <field name="website_indexed" eval="True"/>
+    </record>
+
+    <record id="view_save_the_date" model="ir.ui.view">
+        <field name="name">businessmassan.save-the-date</field>
+        <field name="type">qweb</field>
+        <field name="key">businessmassan_website.save-the-date</field>
+        <field name="arch" type="xml">
+            <t name="Businessmässan Save the date" t-name="businessmassan_website.save-the-date">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure bm-page">
+                        <div class="container py-5">
+<img src="/businessmassan_website/static/src/img/BM-Vit.png" class="img-fluid bm-img my-3" alt=""/>
+<h1 class="bm-h1">Linköpings näringsliv! – Save the date</h1>
+<h4 class="bm-h4 mt-3">En gång är ingen gång, två gånger blir en vana och tredje gången en tradition. Save the date: torsdag 12 nov 2026 – då gör vi Businessmässan Linköping ännu bättre tillsammans i Konsert &amp; Kongress. Hoppas du vill vara med och skapa traditionen i framtidsstaden Linköping</h4>
+<p><a href="/tidigare-massor" class="bm-link">Se tidigare mässsor &amp; event</a></p>
+<p><a href="/#intresse" class="bm-link">Anmäl ditt intresse</a></p>
+<p>När? Torsdag 12 november 2026</p>
+<p>VAR? Konsert &amp; Kongress Linköping</p>
+<h2 class="bm-h2 mt-5">Medverka aktivt! - Du kommer att möta massor av presumtiva kunder på kort tid</h2>
+<h3 class="bm-h3 mt-4">BM bjuder in – mötesplatsen för affärer &amp; nätverkande</h3>
+<h2 class="bm-h2 mt-5">Businessmässan har under 2024 och 2025 etablerat sig som en dynamisk mötesplats på Konsert &amp; Kongress. Visionen är en årligt återkommande och hållbar företagsmässa och inspirationsdag där företagande, entreprenörskap och innovationskraft står i centrum. En dag för företag, allmänhet och framtidens talanger att mötas. Mötesplatsen har arrangerats av Anders Björck AB i samverkan med Visit Linköping &amp; Co, Linköpings kommun och NTM Media.</h2>
+<div class="row align-items-center my-4"><div class="col-6 col-md-3 mb-3"><img src="/businessmassan_website/static/src/img/linkoping-rgb-300x85-1.png" class="img-fluid bm-logo" alt=""/></div><div class="col-6 col-md-3 mb-3"><img src="/businessmassan_website/static/src/img/NTMmedia.white_.png" class="img-fluid bm-logo" alt=""/></div><div class="col-6 col-md-3 mb-3"><img src="/businessmassan_website/static/src/img/bb-lkpg-2.png" class="img-fluid bm-logo" alt=""/></div></div>
+<p>© 2024 All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="page_save_the_date" model="website.page">
+        <field name="name">Save the date</field>
+        <field name="url">/save-the-date</field>
+        <field name="view_id" ref="view_save_the_date"/>
+        <field name="is_published" eval="True"/>
+        <field name="website_indexed" eval="True"/>
+    </record>
+
+    <record id="view_tidigare_massor" model="ir.ui.view">
+        <field name="name">businessmassan.tidigare-massor</field>
+        <field name="type">qweb</field>
+        <field name="key">businessmassan_website.tidigare-massor</field>
+        <field name="arch" type="xml">
+            <t name="Businessmässan Tidigare mässor" t-name="businessmassan_website.tidigare-massor">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure bm-page">
+                        <div class="container py-5">
+<p><a href="/" class="bm-link">Tillbaka</a></p>
+<h2 class="bm-h2 mt-5">Läs mer om tidigare mässor - Arrangör BusinessMässan</h2>
+<h3 class="bm-h3 mt-4">BM-LKPG 2024</h3>
+<p>Businessmässan – Årets viktigaste mötesplats för Linköpings näringsliv Det blev en lyckad och för många efterlängtad premiär av “Nya Näringslivsmässan i Linköping”. När dörrarna väl slogs upp 14 nov på Konsert &amp; Kongress så var det massor med stilrena hållbara montrar och en härlig energi bland alla utställare på plats.</p>
+<p><a href="/bm-lkpg-2024" class="bm-link">Read More »</a></p>
+<h3 class="bm-h3 mt-4">BM-LKPG 2025</h3>
+<p>Businessmässan Linköping 2025: En succé för stadens näringsliv! Den 13 november 2025 gick startskottet för den andra upplagan av Businessmässan – Näringslivsmässan Linköping. Konsert &amp; Kongress fylldes av energi när regionens viktigaste mötesplats för företagare slog upp dörrarna. Dagen inleddes med ett uppskattat lunchmingel för våra utställare innan allmänheten välkomnades</p>
+<p><a href="/bm-lkpg-2025" class="bm-link">Read More »</a></p>
+<h3 class="bm-h3 mt-4">BM-NKPG 2025</h3>
+<p>Äntligen så arrangerade vi en Näringslivsmässa i Norrköping. Businessmässan Norrköping gick av stapeln 24 april med spännande företag, organisationer och många besökare i vackra Flygeln i Norrköping Det var massor med stilrena hållbara montrar och en härlig energi bland alla utställare på plats. Det var ca 50-talet utställare och en</p>
+<p><a href="/bm-2025" class="bm-link">Read More »</a></p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="page_tidigare_massor" model="website.page">
+        <field name="name">Tidigare mässor</field>
+        <field name="url">/tidigare-massor</field>
+        <field name="view_id" ref="view_tidigare_massor"/>
+        <field name="is_published" eval="True"/>
+        <field name="website_indexed" eval="True"/>
+    </record>
+
+</odoo>
