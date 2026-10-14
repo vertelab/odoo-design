@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Businessmässans footer — ersätter Odoos standardfooter (demotext).
+         Källa: businessmassan.se. Kontaktuppgifter från Anders Björck AB. -->
+    <record id="view_businessmassan_footer" model="ir.ui.view">
+        <field name="name">Businessmässan Footer</field>
+        <field name="inherit_id" ref="website.layout"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='footer']" position="replace">
+                <div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer">
+                    <section class="s_text_block pt40 pb16" data-snippet="s_text_block" data-name="Text">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3 pt24 pb24">
+                                    <h5 class="mb-3">Snabblänkar</h5>
+                                    <ul class="list-unstyled">
+                                        <li><a href="/">Startsida</a></li>
+                                        <li><a href="/boka">Boka</a></li>
+                                        <li><a href="/for-utstallare">För utställare</a></li>
+                                        <li><a href="/program">Program</a></li>
+                                        <li><a href="/nkpg">Norrköping</a></li>
+                                        <li><a href="/tidigare-massor">Tidigare mässor</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-5 pt24 pb24">
+                                    <h5 class="mb-3">Om Businessmässan</h5>
+                                    <p>Businessmässan är mötesplatsen för företag, allmänhet och
+                                       framtidens talanger. En dag för att mötas, nätverka och
+                                       knyta nya affärskontakter.</p>
+                                    <p>Arrangeras av Anders Björck AB i samverkan med Visit Linköping &amp; Co,
+                                       Linköpings kommun och NTM Media.</p>
+                                </div>
+                                <div id="connect" class="col-lg-3 offset-lg-1 pt24 pb24">
+                                    <h5 class="mb-3">Kontakta oss</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa fa-comment fa-fw me-2"/><span><a href="/contactus">Kontakta oss</a></span></li>
+                                        <li><i class="fa fa-envelope fa-fw me-2"/><span><a href="mailto:info@businessmassan.se">info@businessmassan.se</a></span></li>
+                                        <li><i class="fa fa-phone fa-fw me-2"/><span class="o_force_ltr"><a href="tel:+4613100910">013-10 09 10</a></span></li>
+                                        <li><i class="fa fa-globe fa-fw me-2"/><span><a href="https://businessmassan.se" target="_blank" rel="noopener">businessmassan.se</a></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

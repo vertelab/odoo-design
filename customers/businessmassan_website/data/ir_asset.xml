@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Businessmässans SCSS: typsnitt (Noto Sans/Lato) + mörk header (#272629).
+         ir.asset krävs utöver manifestets assets-block — annars laddas filen inte. -->
+    <record id="asset_businessmassan_scss" model="ir.asset">
+        <field name="name">Businessmässan SCSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="directive">append</field>
+        <field name="path">businessmassan_website/static/src/scss/businessmassan.scss</field>
+    </record>
+</odoo>

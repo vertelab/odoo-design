@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Huvudmeny för Businessmässans webbplats.
+        Speglar originalets navigation (businessmassan.se).
+
+        Odoo skapar en per-webbplats toppmeny ("Toppmeny för webbplats 1") med
+        standardposter (Shop, Events, Forum, Courses, Booking, Contact us).
+        De saknar xmlid (de är kopior), så de tas bort på url i stället —
+        se models/website_menu_cleanup.py.
+    -->
+
+    <!-- ── Ta bort Odoos standardposter ur menyn (på url) ──────────────── -->
+    <function model="website.menu" name="_businessmassan_clean_default_menu"/>
+
+    <!-- ── Businessmässans meny ────────────────────────────────────────── -->
+    <record id="menu_home" model="website.menu">
+        <field name="name">Startsida</field>
+        <field name="page_id" ref="businessmassan_website.page_lkpg"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">10</field>
+    </record>
+    <record id="menu_boka" model="website.menu">
+        <field name="name">Boka</field>
+        <field name="page_id" ref="businessmassan_website.page_boka"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">20</field>
+    </record>
+    <record id="menu_for_utstallare" model="website.menu">
+        <field name="name">För utställare</field>
+        <field name="page_id" ref="businessmassan_website.page_for_utstallare"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">30</field>
+    </record>
+    <record id="menu_program" model="website.menu">
+        <field name="name">Program</field>
+        <field name="page_id" ref="businessmassan_website.page_program"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">40</field>
+    </record>
+    <record id="menu_nkpg" model="website.menu">
+        <field name="name">Norrköping</field>
+        <field name="page_id" ref="businessmassan_website.page_nkpg"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">50</field>
+    </record>
+    <record id="menu_tidigare" model="website.menu">
+        <field name="name">Tidigare mässor</field>
+        <field name="page_id" ref="businessmassan_website.page_tidigare_massor"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">60</field>
+    </record>
+</odoo>

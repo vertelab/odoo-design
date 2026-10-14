@@ -1,0 +1,29 @@
+// Businessmässan — typsnitt enligt originalet (businessmassan.se)
+// Rubriker: Noto Sans · Brödtext: Lato
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400&display=swap');
+
+:root {
+    --bm-font-heading: 'Noto Sans', sans-serif;
+    --bm-font-body: 'Lato', sans-serif;
+}
+
+body, .o_website_font_body {
+    font-family: var(--bm-font-body);
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--bm-font-heading);
+    font-weight: 600;
+}
+
+// Mörk header som originalet (#272629)
+#wrapwrap > header, .o_header_standard {
+    background-color: #272629;
+}
+
+// Dölj e-handelsvagnen — sajten är en mässwebbplats, ingen butik.
+// (Vyn website_sale.header_cart_link är en primary-vy som layouten anropar;
+//  den får därför inte inaktiveras, bara döljas.)
+.o_wsale_my_cart {
+    display: none !important;
+}

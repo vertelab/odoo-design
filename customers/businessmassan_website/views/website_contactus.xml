@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Businessmässans kontaktsidor — ersätter Odoos demoadress med kundens
+         riktiga uppgifter. hasclass() används (robust mot översättning). -->
+
+    <record id="view_businessmassan_contactus" model="ir.ui.view">
+        <field name="name">Businessmässan Contact us</field>
+        <field name="inherit_id" ref="website.contactus"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('col-lg-4')][hasclass('offset-lg-1')]" position="replace">
+                <div class="col-lg-4 offset-lg-1 mt-4 mt-lg-0">
+                    <h5>Anders Björck AB</h5>
+                    <ul class="list-unstyled mb-0 ps-2">
+                        <li><i class="fa fa-globe fa-fw me-2"/><span><a href="https://businessmassan.se" target="_blank" rel="noopener">businessmassan.se</a></span></li>
+                        <li><i class="fa fa-phone fa-fw me-2"/><span class="o_force_ltr"><a href="tel:+4613100910">013-10 09 10</a></span></li>
+                        <li><i class="fa fa-envelope fa-fw me-2"/><span><a href="mailto:info@businessmassan.se">info@businessmassan.se</a></span></li>
+                    </ul>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_businessmassan_contactus_thanks" model="ir.ui.view">
+        <field name="name">Businessmässan Contact us Thanks</field>
+        <field name="inherit_id" ref="website.contactus_thanks_ir_ui_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('col-lg-4')][hasclass('offset-lg-1')]" position="replace">
+                <div class="col-lg-4 offset-lg-1">
+                    <h5>Anders Björck AB</h5>
+                    <ul class="list-unstyled mb-0 ps-2">
+                        <li><i class="fa fa-globe fa-fw me-2"/><span><a href="https://businessmassan.se" target="_blank" rel="noopener">businessmassan.se</a></span></li>
+                        <li><i class="fa fa-phone fa-fw me-2"/><span class="o_force_ltr"><a href="tel:+4613100910">013-10 09 10</a></span></li>
+                        <li><i class="fa fa-envelope fa-fw me-2"/><span><a href="mailto:info@businessmassan.se">info@businessmassan.se</a></span></li>
+                    </ul>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

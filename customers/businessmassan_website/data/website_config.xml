@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Businessmässan: namn, logotyp och typsnitt (enligt businessmassan.se) -->
+    <record id="website.default_website" model="website">
+        <field name="name">Businessmässan</field>
+        <field name="logo" type="base64" file="businessmassan_website/static/src/img/logo.png"/>
+        <field name="custom_code_head"><![CDATA[
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet"/>
+<style>
+  body, .o_website_font_body, p, li, a { font-family: "Lato", sans-serif !important; }
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Noto Sans", sans-serif !important; font-weight: 600; }
+</style>
+]]></field>
+    </record>
+</odoo>
